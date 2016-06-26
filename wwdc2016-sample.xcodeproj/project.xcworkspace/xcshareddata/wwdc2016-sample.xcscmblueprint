@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B4B1D1515E81A9EB4DBF1FA6B292988DCB05A251",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B4B1D1515E81A9EB4DBF1FA6B292988DCB05A251" : 0,
+    "2DFADC9AD84CF9C31D739A31DD9C69332B3E98FE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8E166D09-507F-4998-9D91-62DB0698521F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B4B1D1515E81A9EB4DBF1FA6B292988DCB05A251" : "wwdc2016-sample\/",
+    "2DFADC9AD84CF9C31D739A31DD9C69332B3E98FE" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "wwdc2016-sample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "wwdc2016-sample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mono0926\/gihyo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2DFADC9AD84CF9C31D739A31DD9C69332B3E98FE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mono0926\/wwdc2016-sample.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B4B1D1515E81A9EB4DBF1FA6B292988DCB05A251"
+    }
+  ]
+}
