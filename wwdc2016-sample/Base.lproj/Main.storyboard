@@ -1,28 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="86H-en-5lz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8wH-BN-2Ik">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="E0R-qV-pQI">
+            <objects>
+                <navigationController id="8wH-BN-2Ik" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rkk-aB-Ab3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="86H-en-5lz" kind="relationship" relationship="rootViewController" id="oKv-6v-fjw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ee3-iK-wfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="16"/>
+        </scene>
+        <!-- Samples-->
         <scene sceneID="8fP-Ql-PRY">
             <objects>
                 <tableViewController id="86H-en-5lz" customClass="TableViewController" customModule="wwdc2016_sample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fyx-2Z-XaR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fyx-2Z-XaR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="4Yd-54-taP">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hh2-8B-TF6" style="IBUITableViewCellStyleDefault" id="fo9-lh-cuQ">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fo9-lh-cuQ" id="bPp-an-YxF">
+                                            <frame key="frameInset" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text=" Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hh2-8B-TF6">
+                                                    <frame key="frameInset" minX="15" width="325" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="rX8-sg-Oad" kind="push" id="EfZ-cb-SUN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="86H-en-5lz" id="z2j-VF-aEC"/>
                             <outlet property="delegate" destination="86H-en-5lz" id="9LS-Bh-7uu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title=" Samples" id="SA1-Sf-ExR"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hj8-8U-SWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-20" y="12"/>
+        </scene>
+        <!--Notification Samples View Controller-->
+        <scene sceneID="OIK-db-tkj">
+            <objects>
+                <tableViewController id="rX8-sg-Oad" customClass="NotificationSamplesViewController" customModule="wwdc2016_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="T8F-g3-yjr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="Qvb-F8-aee">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zB0-Js-4Om">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zB0-Js-4Om" id="2Mp-oH-0rA">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IS8-ef-ZDj">
+                                                    <state key="normal" title="  Time interval notification (5sec)"/>
+                                                    <connections>
+                                                        <action selector="timeInterval5secDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="FtI-SH-iK8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IS8-ef-ZDj" firstAttribute="leading" secondItem="2Mp-oH-0rA" secondAttribute="leading" id="LE0-xq-9DF"/>
+                                                <constraint firstAttribute="bottom" secondItem="IS8-ef-ZDj" secondAttribute="bottom" id="Vm2-4F-ycJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="IS8-ef-ZDj" secondAttribute="trailing" id="Yzt-kX-sgb"/>
+                                                <constraint firstItem="IS8-ef-ZDj" firstAttribute="top" secondItem="2Mp-oH-0rA" secondAttribute="top" id="dXt-Up-QbJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7o6-2k-2O4">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7o6-2k-2O4" id="wNJ-BR-RtC">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9f-ng-mUL">
+                                                    <state key="normal" title="  Time interval notification (1min)"/>
+                                                    <connections>
+                                                        <action selector="timeInterval1minDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="flV-PR-dhX"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="F9f-ng-mUL" firstAttribute="leading" secondItem="wNJ-BR-RtC" secondAttribute="leading" id="HFw-EU-MYo"/>
+                                                <constraint firstAttribute="bottom" secondItem="F9f-ng-mUL" secondAttribute="bottom" id="TAN-jV-DtV"/>
+                                                <constraint firstAttribute="trailing" secondItem="F9f-ng-mUL" secondAttribute="trailing" id="e5N-RE-oir"/>
+                                                <constraint firstItem="F9f-ng-mUL" firstAttribute="top" secondItem="wNJ-BR-RtC" secondAttribute="top" id="whN-1w-RcF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tEy-5J-e36">
+                                        <rect key="frame" x="0.0" y="152" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tEy-5J-e36" id="hrg-Z4-xEb">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhK-2i-xoB">
+                                                    <state key="normal" title="Get pending notification requests"/>
+                                                    <connections>
+                                                        <action selector="getPendingNotificaitonRequestDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="1IT-8i-7Wl"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UhK-2i-xoB" firstAttribute="leading" secondItem="hrg-Z4-xEb" secondAttribute="leading" id="GaW-lb-qXi"/>
+                                                <constraint firstAttribute="bottom" secondItem="UhK-2i-xoB" secondAttribute="bottom" id="Heg-41-kV2"/>
+                                                <constraint firstItem="UhK-2i-xoB" firstAttribute="top" secondItem="hrg-Z4-xEb" secondAttribute="top" id="Jxm-iJ-oqx"/>
+                                                <constraint firstAttribute="trailing" secondItem="UhK-2i-xoB" secondAttribute="trailing" id="m4g-SE-qEG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nrd-Sy-Wid">
+                                        <rect key="frame" x="0.0" y="196" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nrd-Sy-Wid" id="yHx-tQ-Hdu">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCC-1O-fic">
+                                                    <state key="normal" title="Remove last pending notification"/>
+                                                    <connections>
+                                                        <action selector="removeLastLocalNotificationDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="7yp-BX-lr2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KCC-1O-fic" firstAttribute="leading" secondItem="yHx-tQ-Hdu" secondAttribute="leading" id="6G8-vw-Zph"/>
+                                                <constraint firstAttribute="bottom" secondItem="KCC-1O-fic" secondAttribute="bottom" id="99T-ZC-1pH"/>
+                                                <constraint firstAttribute="trailing" secondItem="KCC-1O-fic" secondAttribute="trailing" id="hbn-CA-VuL"/>
+                                                <constraint firstItem="KCC-1O-fic" firstAttribute="top" secondItem="yHx-tQ-Hdu" secondAttribute="top" id="zRl-qd-TRm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UPV-Zg-Yrg">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UPV-Zg-Yrg" id="qIQ-y4-BWz">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5e3-MB-245">
+                                                    <state key="normal" title="Remove all pending notificaitons"/>
+                                                    <connections>
+                                                        <action selector="removeAllLocalNotificationsDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="xaT-HV-VWd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="5e3-MB-245" secondAttribute="bottom" id="Ewd-oQ-8J4"/>
+                                                <constraint firstItem="5e3-MB-245" firstAttribute="top" secondItem="qIQ-y4-BWz" secondAttribute="top" id="IBK-9C-TTy"/>
+                                                <constraint firstItem="5e3-MB-245" firstAttribute="leading" secondItem="qIQ-y4-BWz" secondAttribute="leading" id="SCs-Pe-aMd"/>
+                                                <constraint firstAttribute="trailing" secondItem="5e3-MB-245" secondAttribute="trailing" id="Ub9-a1-Te6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Klu-Hb-0CL">
+                                        <rect key="frame" x="0.0" y="284" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Klu-Hb-0CL" id="tHd-Wf-7Zq">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0D-PA-1bW">
+                                                    <state key="normal" title="Get delivered notifications"/>
+                                                    <connections>
+                                                        <action selector="getDeliveredNotificationDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="djG-MY-FGN"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="m0D-PA-1bW" secondAttribute="trailing" id="3m4-QE-OkE"/>
+                                                <constraint firstItem="m0D-PA-1bW" firstAttribute="top" secondItem="tHd-Wf-7Zq" secondAttribute="top" id="4sI-8j-bwU"/>
+                                                <constraint firstItem="m0D-PA-1bW" firstAttribute="leading" secondItem="tHd-Wf-7Zq" secondAttribute="leading" id="Y9f-Yw-msH"/>
+                                                <constraint firstAttribute="bottom" secondItem="m0D-PA-1bW" secondAttribute="bottom" id="ua1-f5-IJ3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aec-NH-sBR">
+                                        <rect key="frame" x="0.0" y="328" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aec-NH-sBR" id="kxR-EY-QfO">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbv-it-5FR">
+                                                    <state key="normal" title="Remove last delivered notification"/>
+                                                    <connections>
+                                                        <action selector="removeLastDeliveredNotificationDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="3nV-bj-qK0"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Kbv-it-5FR" secondAttribute="trailing" id="0lW-vV-TPy"/>
+                                                <constraint firstItem="Kbv-it-5FR" firstAttribute="top" secondItem="kxR-EY-QfO" secondAttribute="top" id="S04-zH-rLZ"/>
+                                                <constraint firstItem="Kbv-it-5FR" firstAttribute="leading" secondItem="kxR-EY-QfO" secondAttribute="leading" id="XHm-ke-HYY"/>
+                                                <constraint firstAttribute="bottom" secondItem="Kbv-it-5FR" secondAttribute="bottom" id="ecO-c5-LVM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sqp-ZR-ALu">
+                                        <rect key="frame" x="0.0" y="372" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sqp-ZR-ALu" id="HJx-BT-Ypc">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYd-1l-KQc">
+                                                    <state key="normal" title="Remove all delivered notifications"/>
+                                                    <connections>
+                                                        <action selector="removeAllDeliveredNotificationsDidTap:" destination="rX8-sg-Oad" eventType="touchUpInside" id="Uya-p4-X20"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oYd-1l-KQc" firstAttribute="top" secondItem="HJx-BT-Ypc" secondAttribute="top" id="3jZ-Ct-T2T"/>
+                                                <constraint firstItem="oYd-1l-KQc" firstAttribute="leading" secondItem="HJx-BT-Ypc" secondAttribute="leading" id="eK2-Q9-LFe"/>
+                                                <constraint firstAttribute="bottom" secondItem="oYd-1l-KQc" secondAttribute="bottom" id="fYg-qx-8UG"/>
+                                                <constraint firstAttribute="trailing" secondItem="oYd-1l-KQc" secondAttribute="trailing" id="rKc-sU-0jB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="rX8-sg-Oad" id="eWC-Je-49Y"/>
+                            <outlet property="delegate" destination="rX8-sg-Oad" id="C3q-Si-8wc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="6Oa-a8-9rq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWZ-kx-LLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="16"/>
         </scene>
     </scenes>
 </document>

@@ -14,6 +14,8 @@
 		FE069B6C1D1F669600964F4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE069B6A1D1F669600964F4C /* LaunchScreen.storyboard */; };
 		FE069B771D1F669600964F4C /* wwdc2016_sampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE069B761D1F669600964F4C /* wwdc2016_sampleTests.swift */; };
 		FE069B821D1F669600964F4C /* wwdc2016_sampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE069B811D1F669600964F4C /* wwdc2016_sampleUITests.swift */; };
+		FE7A367D1D1FADB500575EA8 /* apns.json in Resources */ = {isa = PBXBuildFile; fileRef = FE7A367C1D1FADB500575EA8 /* apns.json */; };
+		FE7A367F1D1FBF3300575EA8 /* NotificationSamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7A367E1D1FBF3300575EA8 /* NotificationSamplesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 		FE069B7D1D1F669600964F4C /* wwdc2016-sampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wwdc2016-sampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE069B811D1F669600964F4C /* wwdc2016_sampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wwdc2016_sampleUITests.swift; sourceTree = "<group>"; };
 		FE069B831D1F669600964F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE7A367C1D1FADB500575EA8 /* apns.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apns.json; sourceTree = "<group>"; };
+		FE7A367E1D1FBF3300575EA8 /* NotificationSamplesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSamplesViewController.swift; sourceTree = "<group>"; };
+		FEF68C341D1F9D090073211A /* wwdc2016-sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "wwdc2016-sample.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 		FE069B551D1F669600964F4C = {
 			isa = PBXGroup;
 			children = (
+				FE7A367C1D1FADB500575EA8 /* apns.json */,
 				FE069B601D1F669600964F4C /* wwdc2016-sample */,
 				FE069B751D1F669600964F4C /* wwdc2016-sampleTests */,
 				FE069B801D1F669600964F4C /* wwdc2016-sampleUITests */,
@@ -97,12 +103,14 @@
 		FE069B601D1F669600964F4C /* wwdc2016-sample */ = {
 			isa = PBXGroup;
 			children = (
+				FEF68C341D1F9D090073211A /* wwdc2016-sample.entitlements */,
 				FE069B611D1F669600964F4C /* AppDelegate.swift */,
 				FE069B631D1F669600964F4C /* TableViewController.swift */,
 				FE069B651D1F669600964F4C /* Main.storyboard */,
 				FE069B681D1F669600964F4C /* Assets.xcassets */,
 				FE069B6A1D1F669600964F4C /* LaunchScreen.storyboard */,
 				FE069B6D1D1F669600964F4C /* Info.plist */,
+				FE7A367E1D1FBF3300575EA8 /* NotificationSamplesViewController.swift */,
 			);
 			path = "wwdc2016-sample";
 			sourceTree = "<group>";
@@ -196,6 +204,11 @@
 						DevelopmentTeam = T2A5TG8364;
 						DevelopmentTeamName = "Masayuki Ono";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					FE069B711D1F669600964F4C = {
 						CreatedOnToolsVersion = 8.0;
@@ -241,6 +254,7 @@
 				FE069B6C1D1F669600964F4C /* LaunchScreen.storyboard in Resources */,
 				FE069B691D1F669600964F4C /* Assets.xcassets in Resources */,
 				FE069B671D1F669600964F4C /* Main.storyboard in Resources */,
+				FE7A367D1D1FADB500575EA8 /* apns.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +281,7 @@
 			files = (
 				FE069B641D1F669600964F4C /* TableViewController.swift in Sources */,
 				FE069B621D1F669600964F4C /* AppDelegate.swift in Sources */,
+				FE7A367F1D1FBF3300575EA8 /* NotificationSamplesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,10 +429,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "wwdc2016-sample/wwdc2016-sample.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "wwdc2016-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mono0926.wwdc2016-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,7 +447,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "wwdc2016-sample/wwdc2016-sample.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "wwdc2016-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mono0926.wwdc2016-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -1,0 +1,10 @@
+{
+    "aps": {
+        "alert": {
+            "title": "Introduction to Notifications",
+            "subtitle": "Session 707",
+            "body": "Woah! These new notifications look amazing! Don’t you agree?"
+        },
+        "badge": 1
+    }
+}

@@ -1,0 +1,1 @@
+pem --force --development -p "sample" -a "com.mono0926.wwdc2016-sample"
