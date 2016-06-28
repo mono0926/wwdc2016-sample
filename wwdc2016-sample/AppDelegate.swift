@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("deviceToken: \(deviceToken)")
     }
     
-    // same as old API
+    // depricated: iOS 10.0
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print("error: \(error)")
     }
@@ -82,7 +82,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
         completionHandler([.badge, .alert, .sound])
     }
-    // Called when the application is in background
+    // Called when the application is opened by notification
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
         print("center: \(center)\nresponse: \(response)")
