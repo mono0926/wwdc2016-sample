@@ -84,6 +84,7 @@ class NotificationSamplesViewController: UITableViewController {
         content.title = "title"
         content.body = "body"
         content.sound = UNNotificationSound.default()
+        content.categoryIdentifier = MyNotificationCategory.message.rawValue
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let identifier = "time_interval_\(NSDate())"
         lastLocalNotificationIdentifier = identifier

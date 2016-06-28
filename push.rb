@@ -5,7 +5,7 @@ pusher = Grocer.pusher(
 )
 
 notification = Grocer::Notification.new(
-  device_token:      "c9e8bacc37261688c9d0fdf0421e915418bbcf559b84482aef629a5afddbf6bc",
+  device_token:      "7216d3637327f0db90f9b04bacfb7437671e1070929d928adce567c2293944ac",
 
   # iOS 9 or earlier
   # alert:             "Hello WWDC 2016 Samples",
@@ -17,8 +17,7 @@ notification = Grocer::Notification.new(
   	"body": "Hello WWDC 2016 Samples" 
   },
   badge:             1,
-  sound:             "Default",
-  identifier: 1223
+  sound:             "Default"
 )
 
 pusher.push(notification)

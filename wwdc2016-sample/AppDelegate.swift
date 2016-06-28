@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 10.0, *) {
             let center = UNUserNotificationCenter.current()
             center.delegate = self
+            let action = UNNotificationAction(identifier: MyNotificationAction.reply.rawValue, title: "Reply", options: [])
+            let category = UNNotificationCategory(identifier: MyNotificationCategory.message.rawValue, actions: [action], minimalActions: [action], intentIdentifiers: [], options: [.customDismissAction])
+            center.setNotificationCategories([category])
             center.requestAuthorization([.badge, .alert, .sound]) { granted, error in
                 print("granted: \(granted)")
                 print("error: \(error)")
@@ -58,6 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("userInfo: \(userInfo)")
     }
+    
+    // depricated: iOS 10.0
+    func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: () -> Void) {
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
@@ -86,6 +93,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
         print("center: \(center)\nresponse: \(response)")
+        let actionIdentifier = response.actionIdentifier
         completionHandler()
     }
 }
